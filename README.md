@@ -1,5 +1,9 @@
 # rag-python
-experiments with llama index
+ML/LLM experiments with Llama Index to develop a personal assistant for cognitive impaired patients
+
+## Datasets
+
+The datasets come from Wikipedia and focus on dementia. 
 
 ## Setup
 
