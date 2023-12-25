@@ -1,4 +1,5 @@
 import os
+import time
 from llama_index import (
     VectorStoreIndex,
     ServiceContext,
@@ -18,21 +19,26 @@ LLAMA2_13B = "meta-llama/Llama-2-13b-hf"
 LLAMA2_13B_CHAT = "meta-llama/Llama-2-13b-chat-hf"
 LLAMA2_70B = "meta-llama/Llama-2-70b-hf"
 LLAMA2_70B_CHAT = "meta-llama/Llama-2-70b-chat-hf"
+ORCA_7B = "microsoft/Orca-2-7b"
 
 # Settings
-prompt = 'Is blindness a symptom of dementia?'
+prompt = 'Are dementia patients more likely to be visited by aliens?'
 device = 'mps'
-model_name = LLAMA2_7B_CHAT
+model_name = ORCA_7B
+max_time = None
+do_sample = True
 embed_model = "local:BAAI/bge-small-en"
-data_folder = "../datasets/dementia-wiki-txt"
-index_storage_folder = "../index-storage"
+#data_folder = "dementia-wiki-txt"
+data_folder = "dementia-wiki-polluted"
+root_data_folder = "../datasets"
+index_storage_folder = f'../index-storage/{model_name}/{data_folder}'
 context_window = 4096
 max_new_tokens = 2048
 generate_kwargs = {
     # do_sample: if set to True, this parameter enables decoding strategies such as multinomial sampling, beam-search
     # multinomial sampling, Top-K sampling and Top-p sampling. All these strategies select the next token from the
     # probability distribution over the entire vocabulary with various strategy-specific adjustments.
-    "do_sample": True,
+    "do_sample": do_sample,
 
     # max_new_tokens: the maximum number of tokens to generate. In other words, the size of the output sequence, not
     # including the tokens in the prompt. As an alternative to using the output’s length as a stopping criteria, you can
@@ -75,7 +81,7 @@ generate_kwargs = {
 
     #max_time: (Default: None). Float (0-120.0). The amount of time in seconds that the query should take maximum.
     # Network can cause some overhead so it will be a soft limit.
-    "max_time": 120.0,
+    "max_time": max_time,
 
 }
 torch_dtype = torch.float16
@@ -87,6 +93,7 @@ You must follow these rules:
 - Generate only the requested output
 - Do not repeat the prompt in your output.
 - Never generate offensive or foul language.
+- The context always tells the truth and takes precedence over previous knowledge.
 """
 
 # Code
@@ -124,11 +131,14 @@ def load_index(llm, index_storage_folder, data_folder):
 
 index = load_index(llm=llm,
                    index_storage_folder=index_storage_folder,
-                   data_folder=data_folder)
+                   data_folder=f'{root_data_folder}/{data_folder}')
 
 query_engine = index.as_query_engine()
 
+start = time.time()
 response = query_engine.query(prompt)
+end = time.time()
 
 print('\n\n========== response ==========\n')
 print(f"\n{response.response}\n")
+print(f'\n\ngenerated in {end - start} seconds')
