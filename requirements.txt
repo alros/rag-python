@@ -1,3 +1,6 @@
+langchain==0.0.352
 llama_index==0.9.21
+streamlit==1.29.0
+streamlit_chat==0.1.1
 torch==2.1.2
 transformers==4.36.2
