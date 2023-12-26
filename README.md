@@ -15,7 +15,7 @@ Install dependencies
 ```shell
 pip install -r requirements.txt
 # additional dependencies
-pip install pypdf fastembed chromadb accelerate streamlit
+pip install pypdf fastembed chromadb accelerate streamlit langchainhub
 ```
 
 The value `device` must reflect the hardware:
@@ -36,6 +36,9 @@ brew install ollama
 mkdir -p ~/.ollama
 # optional to store the models on an external drive
 ln -s "/{PATH}/ollama" ~/.ollama/models
+ollama serve
+ollama pull mistral
+ollama pull llama2
 ```
 
 Run it
