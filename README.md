@@ -59,3 +59,7 @@ Basic experiment using `llama-index` and `llama` to index and query a dataset.
 ### 02-chat-bot
 
 Experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM
+
+### 03-fine-tuning
+
+Experiment fine-tuning `bert` with a dataset of reviews
