@@ -1,6 +1,8 @@
 # Training with Colab
 
-A notebook for Google Colab to produce a fine-tuned model
+A notebook for Google Colab to produce a fine-tuned model. It uses quantization to limit the amount of resources.
+
+## Configuration
 
 Set `model_name` to `LLAMA` or `GPT`
 

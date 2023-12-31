@@ -63,3 +63,7 @@ Experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discus
 ### 03-fine-tuning
 
 Experiment fine-tuning `bert` with a dataset of reviews
+
+### 04-training-with-colab
+
+Same as 03, but using Colab
