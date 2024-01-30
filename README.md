@@ -67,3 +67,7 @@ Experiment fine-tuning `bert` with a dataset of reviews
 ### 04-training-with-colab
 
 Same as 03, but using Colab
+
+### 05-create-a-bio
+
+Generate knowledge with LLMs and use the results to build the knowledge base for further iterations.
