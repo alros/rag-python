@@ -71,3 +71,15 @@ Same as 03, but using Colab
 ### 05-create-a-bio
 
 Generate knowledge with LLMs and use the results to build the knowledge base for further iterations.
+
+### 06-sentence-split
+
+Evaluates how SentenceSplitter works
+
+## Datasets
+
+- `bio`: fictional bio generated iteratively with `05-create-a-bio`.
+- `bio-single-file`: same as `bio` but in one file.
+- `dementia-wiki-txt`: extract from the Wikipedia about dementia.
+- `dementia-wiki-polluted`: same as `dementia-wiki-txt` but contains a sentence connecting dementia to alien abduction. It's useful to evaluate LLMs' hallucination in RAG.
+- `TwentyThousandLeaguesUnderTheSea`: "Twenty Thousand Leagues Under The Sea" from https://www.gutenberg.org/ebooks/164
