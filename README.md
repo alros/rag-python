@@ -80,6 +80,10 @@ Evaluates how SentenceSplitter works
 
 Variation of 06-sentence-split
 
+### 08-query-chroma
+
+Test to verify how Chroma retrieves knowledge based on queries and filters
+
 ## Datasets
 
 - `bio`: fictional bio generated iteratively with `05-create-a-bio`.
