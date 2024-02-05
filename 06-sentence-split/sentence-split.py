@@ -8,7 +8,7 @@ reader = SimpleDirectoryReader(kb_path, recursive=True)
 for docs in reader.iter_data():
     print(f'loaded {len(docs)} documents')
     for doc in docs:
-        base_nodes = node_parser.get_nodes_from_documents(docs)
+        base_nodes = node_parser.get_nodes_from_documents([doc])
         print(f'nodes for file {doc.metadata["file_path"]}')
         for idx, node in enumerate(base_nodes):
             print(f'{"="*20}\nnode-{idx}\n{node.text}\n')
