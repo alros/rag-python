@@ -76,10 +76,15 @@ Generate knowledge with LLMs and use the results to build the knowledge base for
 
 Evaluates how SentenceSplitter works
 
+### 07-rag-pipeline
+
+Variation of 06-sentence-split
+
 ## Datasets
 
 - `bio`: fictional bio generated iteratively with `05-create-a-bio`.
 - `bio-single-file`: same as `bio` but in one file.
 - `dementia-wiki-txt`: extract from the Wikipedia about dementia.
 - `dementia-wiki-polluted`: same as `dementia-wiki-txt` but contains a sentence connecting dementia to alien abduction. It's useful to evaluate LLMs' hallucination in RAG.
-- `TwentyThousandLeaguesUnderTheSea`: "Twenty Thousand Leagues Under The Sea" from https://www.gutenberg.org/ebooks/164
+- `TwentyThousandLeaguesUnderTheSea`: "Twenty Thousand Leagues Under The Sea" from [https://www.gutenberg.org/ebooks/164](https://www.gutenberg.org)
+- `gutemberg`: a few free books from [https://www.gutenberg.org](https://www.gutenberg.org)
