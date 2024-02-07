@@ -1,5 +1,5 @@
 import chromadb
-from llama_index import ServiceContext, VectorStoreIndex
+from llama_index import ServiceContext, VectorStoreIndex, QueryBundle, get_response_synthesizer
 from llama_index.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
 from llama_index.llms import Ollama
 from llama_index.query_engine import RetrieverQueryEngine
@@ -37,7 +37,10 @@ def query(prompt):
         verbose=True,
         response_mode=ResponseMode.COMPACT)
 
-    return query_engine.query(prompt), llama_debug
+    query_bundle = QueryBundle(prompt)
+    nodes = query_engine.retrieve(query_bundle)
+
+    return query_engine.synthesize(query_bundle=query_bundle, nodes=nodes), llama_debug
 
 
 def print_debug(response: RESPONSE_TYPE, llama_debug: LlamaDebugHandler):
