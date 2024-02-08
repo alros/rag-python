@@ -2,6 +2,7 @@ import chromadb
 from llama_index import ServiceContext, VectorStoreIndex, QueryBundle, get_response_synthesizer
 from llama_index.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
 from llama_index.llms import Ollama
+from llama_index.postprocessor import LLMRerank
 from llama_index.query_engine import RetrieverQueryEngine
 from llama_index.response.schema import RESPONSE_TYPE
 from llama_index.response_synthesizers import ResponseMode
@@ -11,7 +12,8 @@ model = "mistral"
 db_path = '../chroma_db/gutenberg'
 kb_path = './kb'
 db_collection = 'gutenberg'
-retrieve_N_chunks = 3
+retrieve_N_chunks = 5
+reranker_top_n = 2
 
 
 def query(prompt):
@@ -40,14 +42,31 @@ def query(prompt):
     query_bundle = QueryBundle(prompt)
     nodes = query_engine.retrieve(query_bundle)
 
-    return query_engine.synthesize(query_bundle=query_bundle, nodes=nodes), llama_debug
+    reranker = LLMRerank(
+        choice_batch_size=retrieve_N_chunks,
+        top_n=reranker_top_n,
+        service_context=service_context,
+    )
+    reranked_nodes = reranker.postprocess_nodes(
+        nodes, query_bundle
+    )
+
+    print(f'\n\n{"="*20}\nRetrieved nodes\n\n')
+    for node in nodes:
+        print_node(node)
+
+    print(f'\n\n{"=" * 20}\nReranked nodes\n\n')
+    for node in reranked_nodes:
+        print_node(node)
+
+    return query_engine.synthesize(query_bundle=query_bundle, nodes=reranked_nodes), llama_debug
 
 
 def print_debug(response: RESPONSE_TYPE, llama_debug: LlamaDebugHandler):
     event_pairs = llama_debug.get_event_pairs(CBEventType.LLM)
     print("\n" + ("=" * 20) + " RESPONSE " + ("=" * 20) + "\n")
     for node in response.source_nodes:
-        print(f'{node.node_id}: score {node.score} - {node.node.metadata["file_name"]}\n\n')
+        print_node(node)
     print("\n" + ("=" * 20) + " /RESPONSE " + ("=" * 20) + "\n")
     print("\n" + ("=" * 20) + " DEBUG " + ("=" * 20) + "\n")
     for event_pair in event_pairs:
@@ -56,6 +75,8 @@ def print_debug(response: RESPONSE_TYPE, llama_debug: LlamaDebugHandler):
         print(event_pair[1].payload["response"])
     print("\n" + ("=" * 20) + " /DEBUG " + ("=" * 20) + "\n")
 
+def print_node(node):
+    print(f'{node.node_id}: score {node.score} - {node.node.metadata["file_name"]}\n\n')
 
-response, llama_debug = query("Who is Captain Name")
+response, llama_debug = query("Who is Captain Nemo")
 print_debug(response, llama_debug)
