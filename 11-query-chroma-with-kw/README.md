@@ -1,9 +1,9 @@
 # Test Chroma
 
-- [Test 1](#Test_1)
-  - [Test 1 Control](#Test_1_Control)
-- [Test 2](#Test_2)
-  - [Test 2 Control](#Test_2_Control)
+- [Test 1](#Test-1)
+  - [Test 1 Control](#Test-1-Control)
+- [Test 2](#Test-2)
+  - [Test 2 Control](#Test-2-Control)
 
 ## Test 1
 
