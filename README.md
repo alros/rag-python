@@ -92,6 +92,10 @@ Utilisation of LLMs to re-rank results from the vector database.
 
 Methods to extract keywords (or key-phrases) from a text.
 
+## 11-query-chroma-with-kw
+
+Use keywords to pre-filter the nodes returned by a query.
+
 ## Datasets
 
 - `bio`: fictional bio generated iteratively with `05-create-a-bio`.
