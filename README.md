@@ -1,5 +1,5 @@
 # rag-python
-ML/LLM experiments with Llama Index to develop a personal assistant for cognitive impaired patients
+ML/LLM experiments with Llama Index to develop a personal assistant for cognitive impaired patients.
 
 ## Datasets
 
@@ -11,7 +11,7 @@ The datasets come from Wikipedia and focus on dementia.
 
 `Python 3.11` is unsupported by `Pytorch`. The application must run with `Python 3.10`.
 
-Install dependencies
+Install dependencies:
 ```shell
 pip install -r requirements.txt
 # additional dependencies
@@ -29,7 +29,7 @@ Set the following environment variables:
 
 ### Ollama
 
-Install `ollama`
+Install `ollama`:
 
 ```shell
 brew install ollama
@@ -41,14 +41,14 @@ ollama pull mistral
 ollama pull llama2
 ```
 
-Run it
+Run it:
 
 ```shell
 ollama serve
 ollama run llama2
 ```
 
-That should open an interactive shell to chat with Llama2
+That should open an interactive shell to chat with Llama2.
 
 ## Experiments
 
@@ -58,15 +58,15 @@ Basic experiment using `llama-index` and `llama` to index and query a dataset.
 
 ### 02-chat-bot
 
-Experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM
+Experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM.
 
 ### 03-fine-tuning
 
-Experiment fine-tuning `bert` with a dataset of reviews
+Experiment fine-tuning `bert` with a dataset of reviews.
 
 ### 04-training-with-colab
 
-Same as 03, but using Colab
+Same as 03, but using Colab.
 
 ### 05-create-a-bio
 
@@ -74,15 +74,23 @@ Generate knowledge with LLMs and use the results to build the knowledge base for
 
 ### 06-sentence-split
 
-Evaluates how SentenceSplitter works
+Evaluates how SentenceSplitter works.
 
 ### 07-rag-pipeline
 
-Variation of 06-sentence-split
+Variation of 06-sentence-split.
 
 ### 08-query-chroma
 
-Test to verify how Chroma retrieves knowledge based on queries and filters
+Test to verify how Chroma retrieves knowledge based on queries and filters.
+
+## 09-refiner
+
+Utilisation of LLMs to re-rank results from the vector database.
+
+## 10-keywords-extraction
+
+Methods to extract keywords (or key-phrases) from a text.
 
 ## Datasets
 
