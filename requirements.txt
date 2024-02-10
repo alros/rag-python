@@ -7,3 +7,7 @@ streamlit_chat==0.1.1
 torch==2.1.2
 tqdm==4.66.1
 transformers==4.36.2
+keybert==0.8.3
+spacy==3.7.2
+yake==0.4.8
+rake-nltk==1.0.6
