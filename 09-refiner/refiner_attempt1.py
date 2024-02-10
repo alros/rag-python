@@ -8,12 +8,12 @@ from llama_index.response.schema import RESPONSE_TYPE
 from llama_index.response_synthesizers import ResponseMode
 from llama_index.vector_stores import ChromaVectorStore
 
-model = "mistral"
-db_path = '../chroma_db/gutenberg'
+model = "llama2"
+db_path = '../chroma_db_llama_128/gutenberg'
 kb_path = './kb'
 db_collection = 'gutenberg'
-retrieve_N_chunks = 5
-reranker_top_n = 2
+retrieve_N_chunks = 3
+reranker_top_n = 1
 
 
 def query(prompt):
