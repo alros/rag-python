@@ -96,6 +96,10 @@ Methods to extract keywords (or key-phrases) from a text.
 
 Use keywords to pre-filter the nodes returned by a query.
 
+## 12-faiss
+
+Alternative indexing techniques using the FAISS library.
+
 ## Datasets
 
 - `bio`: fictional bio generated iteratively with `05-create-a-bio`.
