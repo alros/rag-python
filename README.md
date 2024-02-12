@@ -64,9 +64,9 @@ That should open an interactive shell to chat with Llama2.
 - [02-chat-bot](02-chat-bot/README.md): experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM.
 - [03-fine-tuning](03-fine-tuning/README.md): experiment fine-tuning `bert` with a dataset of reviews.
 - [04-training-with-colab](04-training-with-colab/README.md): same as 03, but using Colab.
-- [05-create-a-bio](05-create-a-bio/README/.md): generate knowledge with LLMs and use the results to build the knowledge base for further iterations.
+- [05-create-a-bio](05-create-a-bio/README/README.md): generate knowledge with LLMs and use the results to build the knowledge base for further iterations.
 - [06-sentence-split](06-sentence-split/README.md): evaluates how SentenceSplitter works.
-- [07-rag-pipeline](07-rag-pipeline/README.md): variation of 06-sentence-split.
+- 07-rag-pipeline: variation of 06-sentence-split.
 - [08-query-chroma](08-query-chroma/README.md): test to verify how Chroma retrieves knowledge based on queries and filters.
 - [09-refiner](09-refiner/README.md): utilisation of LLMs to re-rank results from the vector database.
 - [10-keywords-extraction](10-keywords-extraction/README.md): methods to extract keywords (or key-phrases) from a text.
