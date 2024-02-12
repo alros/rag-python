@@ -60,18 +60,18 @@ That should open an interactive shell to chat with Llama2.
 
 ## Experiments
 
-- 01-use-local-knowledge: basic experiment using `llama-index` and `llama` to index and query a dataset. [README](01-use-local-knowledge/README.md).
-- 02-chat-bot: experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM. [README](02-chat-bot/README.md).
-- 03-fine-tuning: experiment fine-tuning `bert` with a dataset of reviews. [README](03-fine-tuning/README.md).
-- 04-training-with-colab: same as 03, but using Colab. [README](04-training-with-colab/README.md).
-- 05-create-a-bio: generate knowledge with LLMs and use the results to build the knowledge base for further iterations. [README](5-create-a-bio/README/.md).
-- 06-sentence-split: evaluates how SentenceSplitter works. [README](06-sentence-split/README.md).
-- 07-rag-pipeline: variation of 06-sentence-split. [README](07-rag-pipeline/README.md).
-- 08-query-chroma: test to verify how Chroma retrieves knowledge based on queries and filters. [README](08-query-chroma/README.md).
-- 09-refiner: utilisation of LLMs to re-rank results from the vector database. [README](09-refiner/README.md).
-- 10-keywords-extraction: methods to extract keywords (or key-phrases) from a text. [README](10-keywords-extraction/README.md).
-- 11-query-chroma-with-kw: use keywords to pre-filter the nodes returned by a query. [README](11-query-chroma-with-kw/README.md).
-- 12-faiss: alternative indexing techniques using the FAISS library. [README](12-faiss/README.md).
+- [01-use-local-knowledge](01-use-local-knowledge/README.md): basic experiment using `llama-index` and `llama` to index and query a dataset.
+- [02-chat-bot](02-chat-bot/README.md): experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM.
+- [03-fine-tuning](03-fine-tuning/README.md): experiment fine-tuning `bert` with a dataset of reviews.
+- [04-training-with-colab](04-training-with-colab/README.md): same as 03, but using Colab.
+- [05-create-a-bio](05-create-a-bio/README/.md): generate knowledge with LLMs and use the results to build the knowledge base for further iterations.
+- [06-sentence-split](06-sentence-split/README.md): evaluates how SentenceSplitter works.
+- [07-rag-pipeline](07-rag-pipeline/README.md): variation of 06-sentence-split.
+- [08-query-chroma](08-query-chroma/README.md): test to verify how Chroma retrieves knowledge based on queries and filters.
+- [09-refiner](09-refiner/README.md): utilisation of LLMs to re-rank results from the vector database.
+- [10-keywords-extraction](10-keywords-extraction/README.md): methods to extract keywords (or key-phrases) from a text.
+- [11-query-chroma-with-kw](11-query-chroma-with-kw/README.md): use keywords to pre-filter the nodes returned by a query.
+- [12-faiss](12-faiss/README.md): alternative indexing techniques using the FAISS library.
 
 ## Datasets
 
