@@ -7,18 +7,6 @@ ML/LLM experiments with Llama Index to develop a personal assistant for cognitiv
   - [Python scripts](#python-scripts)
   - [Ollama](#ollama)
 - [Experiments](#experiments)
-  - [01-use-local-knowledge](#01-use-local-knowledge)
-  - [02-chat-bot](#02-chat-bot)
-  - [03-fine-tuning](#03-fine-tuning)
-  - [04-training-with-colab](#04-training-with-colab)
-  - [05-create-a-bio](#05-create-a-bio)
-  - [06-sentence-split](#06-sentence-split)
-  - [07-rag-pipeline](#07-rag-pipeline)
-  - [08-query-chroma](#08-query-chroma)
-  - [09-refiner](#09-refiner)
-  - [10-keywords-extraction](#10-keywords-extraction)
-  - [11-query-chroma-with-kw](#11-query-chroma-with-kw)
-  - [12-faiss](#12-faiss)
 - [Datasets](#datasets)
 
 Alternative indexing techniques using the FAISS library.
@@ -72,53 +60,18 @@ That should open an interactive shell to chat with Llama2.
 
 ## Experiments
 
-### 01-use-local-knowledge
-
-Basic experiment using `llama-index` and `llama` to index and query a dataset. [README](01-use-local-knowledge/README.md).
-
-### 02-chat-bot
-
-Experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM. [README](02-chat-bot/README.md).
-
-### 03-fine-tuning
-
-Experiment fine-tuning `bert` with a dataset of reviews. [README](03-fine-tuning/README.md).
-
-### 04-training-with-colab
-
-Same as 03, but using Colab. [README](04-training-with-colab/README.md).
-
-### 05-create-a-bio
-
-Generate knowledge with LLMs and use the results to build the knowledge base for further iterations. [README](5-create-a-bio/README/.md).
-
-### 06-sentence-split
-
-Evaluates how SentenceSplitter works. [README](06-sentence-split/README.md).
-
-### 07-rag-pipeline
-
-Variation of 06-sentence-split. [README](07-rag-pipeline/README.md).
-
-### 08-query-chroma
-
-Test to verify how Chroma retrieves knowledge based on queries and filters. [README](08-query-chroma/README.md).
-
-### 09-refiner
-
-Utilisation of LLMs to re-rank results from the vector database. [README](09-refiner/README.md).
-
-### 10-keywords-extraction
-
-Methods to extract keywords (or key-phrases) from a text. [README](10-keywords-extraction/README.md).
-
-### 11-query-chroma-with-kw
-
-Use keywords to pre-filter the nodes returned by a query. [README](11-query-chroma-with-kw/README.md).
-
-### 12-faiss
-
-Alternative indexing techniques using the FAISS library. [README](12-faiss/README.md).
+- 01-use-local-knowledge: basic experiment using `llama-index` and `llama` to index and query a dataset. [README](01-use-local-knowledge/README.md).
+- 02-chat-bot: experiment using `ollama`/`llama2` + `streamlit`/`landchan`/`chromadb` to discuss a PDF with the LLM. [README](02-chat-bot/README.md).
+- 03-fine-tuning: experiment fine-tuning `bert` with a dataset of reviews. [README](03-fine-tuning/README.md).
+- 04-training-with-colab: same as 03, but using Colab. [README](04-training-with-colab/README.md).
+- 05-create-a-bio: generate knowledge with LLMs and use the results to build the knowledge base for further iterations. [README](5-create-a-bio/README/.md).
+- 06-sentence-split: evaluates how SentenceSplitter works. [README](06-sentence-split/README.md).
+- 07-rag-pipeline: variation of 06-sentence-split. [README](07-rag-pipeline/README.md).
+- 08-query-chroma: test to verify how Chroma retrieves knowledge based on queries and filters. [README](08-query-chroma/README.md).
+- 09-refiner: utilisation of LLMs to re-rank results from the vector database. [README](09-refiner/README.md).
+- 10-keywords-extraction: methods to extract keywords (or key-phrases) from a text. [README](10-keywords-extraction/README.md).
+- 11-query-chroma-with-kw: use keywords to pre-filter the nodes returned by a query. [README](11-query-chroma-with-kw/README.md).
+- 12-faiss: alternative indexing techniques using the FAISS library. [README](12-faiss/README.md).
 
 ## Datasets
 
