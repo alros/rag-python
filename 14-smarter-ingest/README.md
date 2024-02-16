@@ -2,7 +2,21 @@
 
 It combines `SimpleDirectoryReader`, `LayoutPDFReader`, and `KeyBERT` from previous experiments in a single reader
 
-Example of output.
+## Setup
+
+Login in Github Container Registry
+
+- create a token
+- `export CR_PAT=THE_TOKEN`
+- `echo $CR_PAT | docker login ghcr.io -u alros --password-stdin`
+
+Download and start the docker image of nlm-ingestor
+
+`docker pull ghcr.io/nlmatics/nlm-ingestor:latest`
+
+Run `SmarterExtractor.py`
+
+## Example of output.
 
 ```text
 ================================
