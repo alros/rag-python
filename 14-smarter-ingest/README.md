@@ -2,6 +2,26 @@
 
 It combines `SimpleDirectoryReader`, `LayoutPDFReader`, and `KeyBERT` from previous experiments in a single reader
 
+## Background
+
+Approaches to PDF text extraction:
+
+- Ramakrishnan, Cartic et al. “Layout-Aware Text Extraction from Full-Text PDF of Scientific Articles.” Source code for biology and medicine 7.1 (2012): 7–7. Web. [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3441580/pdf/1751-0473-7-7.pdf).
+
+Detection of continuous blocks of text, detection of multi-column layouts, classification and fusion of the extracted blocks.
+
+- Bui, Duy Duc An, Guilherme Del Fiol, and Siddhartha Jonnalagadda. “PDF Text Classification to Leverage Information Extraction from Publication Reports.” Journal of biomedical informatics 61 (2016): 141–148. Web. [Link](https://www.sciencedirect.com/science/article/pii/S153204641630017X).
+
+Strategy based on [PDFBox](https://pdfbox.apache.org/) and a classification algorithm to extract and categorise the content.
+
+-   Gelbukh, Alexander. “Improved Text Extraction from PDF Documents for Large-Scale Natural Language Processing.” CICLing (1). Vol. 8403. Germany: Springer Berlin / Heidelberg, 2014. 102–112. Web. [Link](https://link-springer-com.uniessexlib.idm.oclc.org/content/pdf/10.1007/978-3-642-54906-9_9).
+
+Based on [pdfXtk](https://github.com/tamirhassan/pdfxtk/) (built on top of PDFBox), [Apache Tika](https://tika.apache.org/) and [Poppler](https://poppler.freedesktop.org/) (based on [XpdfReader](http://www.xpdfreader.com/)).
+
+## Solution
+
+[LLM Sherpa](https://github.com/nlmatics/llmsherpa): a python library to use [NLM-Ingestor](https://github.com/nlmatics/nlm-ingestor) based on [NLM-Tika](https://github.com/nlmatics/nlm-tika) part of Apache Tika.
+
 ## Setup
 
 Login in Github Container Registry
