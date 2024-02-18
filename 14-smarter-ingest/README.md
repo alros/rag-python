@@ -2,6 +2,16 @@
 
 It combines `SimpleDirectoryReader`, `LayoutPDFReader`, and `KeyBERT` from previous experiments in a single reader
 
+- [Background](#background)
+- [Solution](#solution)
+- [Setup](#setup)
+- [Example of output](#example-of-output)
+- [Problems](#problems)
+  - [Observations](#observations)
+- [Adding HeaderCleansing](#adding-headercleansing)
+  - [Other tests](#other-tests)
+- [Test](#test)
+
 ## Background
 
 Approaches to PDF text extraction:
@@ -36,7 +46,7 @@ Download and start the docker image of nlm-ingestor
 
 Run `SmarterExtractor.py`
 
-## Example of output.
+## Example of output
 
 ```text
 ================================
@@ -225,6 +235,8 @@ Compare with the page
 
 ## Adding HeaderCleansing
 
+HeaderCleansing successfully integrates part of the missing information in the headers in the test case.
+
 Comparison (before / after)
 
 Removal of extra blocks at the beginning and the end
@@ -258,3 +270,13 @@ E.g.
 or
 - Dementia > 1.1.5.4 Complications > Delirium
 - 1.1 Disease > 1.1.5 Treatment > 1.1.5.4 Complications
+
+### Other tests
+
+With a different text with a simpler structure, the parsing is successful.
+
+## Test
+
+Tested with
+- Simone Schmidt, Martina Döbele - Dementia Companion - chapter1
+- Lisa D. Ravdin, Heather L. Katzen - Handbook on the Neuropsychology of Aging and Dementia - chapter 1

@@ -12,12 +12,14 @@ from pydantic import PrivateAttr
 class HeaderCleansing():
 
     def cleanse(self, header: str, current: str) -> str:
-        if current is None:
+        multi_level_header = re.compile('.+ > .+')
+        if current is None or multi_level_header.search(header) is None:
             return header.strip()
         tokens_current = self._split_token(current)
         tokens_header = self._split_token(header)
         tokens_header = self._enrich_header(tokens_header, tokens_current)
-        return self._join(tokens_header, tokens_current)
+        merge = self._join(tokens_header, tokens_current)
+        return merge if len(merge)>0 else header
 
     @staticmethod
     def _split_token(header: str) -> list[str]:
@@ -82,7 +84,8 @@ class PDFDirectoryReader(SimpleDirectoryReader):
                  llm_sherpa_url: str,
                  **kwargs):
         file_extractor = kwargs.pop('file_extractor') if 'file_extractor' in kwargs else {}
-        file_extractor['.pdf'] = SmarterPDFReader(llm_sherpa_url, **kwargs)
+        with_header_cleansing = kwargs.pop('with_header_cleansing') if 'with_header_cleansing' in kwargs else True
+        file_extractor['.pdf'] = SmarterPDFReader(llm_sherpa_url, with_header_cleansing, **kwargs)
         kwargs['file_extractor'] = file_extractor
         super().__init__(**kwargs)
 
@@ -95,9 +98,9 @@ class SmarterPDFReader(BaseReader):
 
     def __init__(self,
                  llm_sherpa_url: str,
+                 with_header_cleansing: bool,
                  keyphrase_ngram_range: Optional[Tuple] = (1, 1),
                  keyphrase_diversity: Optional[float] = 0.9,
-                 with_header_cleansing=True,
                  **kwargs):
         super().__init__()
         self.layout_pdf_reader = LayoutPDFReader(llm_sherpa_url)
