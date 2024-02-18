@@ -77,3 +77,184 @@ Each block contains
 - The position of the paragraph.
 - The keywords extracted from the text.
 - The text of a paragraph without overlapping.
+
+---
+
+## Problems
+
+```text
+================================
+chunk 10
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(auguste, 0.5416) / (51, 0.3419) / (deter, 0.3369) / (old, 0.3045) / (fig, 0.1756)
+--------------------------------
+Fig. 1.2 The 51-year-old Auguste Deter
+
+================================
+chunk 11
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(dementia, 0.558) / (auguste, 0.2756) / (deter, 0.2242) / (brought, 0.1211) / (typical, 0.0615)
+--------------------------------
+(. Fig. 1.2).
+She was brought by her husband, because she could no longer manage the household and showed noticeable behavioral changes.
+In a conversation record of Alzheimer with Auguste Deter, typical features of dementia are recognizable.
+
+================================
+chunk 12
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(alzheimer, 0.5562) / (alois, 0.3717) / (1901, 0.3332) / (conversation, 0.2865) / (typical, 0.0538)
+--------------------------------
+Alois Alzheimer already described in 1901 in his notes the typical course of conversation with people with dementia.
+
+================================
+chunk 13
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(auguste, 0.4655) / (surname, 0.254) / (hesitates, 0.2441) / (51, 0.2147) / (finally, 0.0531)
+--------------------------------
+5 “What is your name?”
+5 “Auguste.”
+5 “Surname?”
+5 “Auguste.”
+5 “What is your husband’s name?
+”—Auguste Deter hesitates, finally answers: 5 “I think…Auguste.”
+5 “Your husband?”
+5 “Oh, I see.”
+5 “How old are you?”
+5 “51.”
+5 “Where do you live?”
+5 “Oh, you have been to our place before.”
+5 “Are you married?”
+5 “Oh, I am so confused.”
+5 “Where are you here?”
+
+================================
+chunk 14
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(amiss, 0.3641)
+--------------------------------
+“Here and everywhere, here and now, you must not take anything amiss from me.”
+
+================================
+chunk 15
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(live, 0.3419)
+--------------------------------
+5 “Where are you here?”
+5 “There we will live.”
+
+================================
+chunk 16
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(bed, 0.5281)
+--------------------------------
+5 “Where is your bed?”
+5 “Where should it be?”
+
+================================
+chunk 17
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(alzheimer, 0.6719) / (symptoms, 0.2545) / (deposits, 0.2171) / (examined, 0.1414) / (surprised, 0.0761)
+--------------------------------
+Alzheimer was surprised by these symptoms, as the patient was only 51 years old.
+After her death, he examined her brain and found the deposits typical of Alzheimer’s disease, called plaques.
+
+================================
+chunk 18
+Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+(dementia, 0.5356) / (vascular, 0.2692) / (forms, 0.1361) / (senile, 0.1251) / (distributed, 0.0685)
+--------------------------------
+In contrast to age-related dementia, Alzheimer’s disease occurs before the age of sixty and is therefore also referred to as the presenile form.
+The dementia of the Alzheimer type, i.e.
+the presenile and the senile form, account for up to 70% of the dementias.
+About 20% of the affected people suffer from a vascular dementia, i.e.
+a dementia caused by circulatory disorders, the rest are distributed among mixed forms of these diseases and dementia syndromes of various causes.
+
+================================
+chunk 19
+Dementia > Risk factors for vascular dementia
+(obesity, 0.4494) / (elevated, 0.2532) / (pressure, 0.0816) / (significantly, 0.0814) / (mellitus, 0.0125)
+--------------------------------
+5 Significantly elevated blood fats (cholesterol) 5 Smoking 5 Diabetes (diabetes mellitus) 5 High blood pressure 5 Obesity (adiposity) 5 Lack of exercise
+
+================================
+chunk 20
+Dementia > Risk factors for vascular dementia
+(prevention, 0.5121) / (factors, 0.313) / (advanced, 0.1599) / (borne, 0.0376) / (time, 0.035)
+--------------------------------
+It should be borne in mind in this context that these risk factors have had an impact over a long period of time.
+They are important for the prevention of the disease, but not in the advanced stage.
+
+================================
+chunk 21
+Dementia > 1.1.1.1 Classiﬁcation of Dementia According to ICD-10
+(dementia, 0.6141) / (10, 0.1594) / (distinguishes, 0.1512) / (international, 0.1174) / (following, 0.0617)
+--------------------------------
+The International Classification of Diseases ICD-10 distinguishes the following dementia diagnoses:
+
+================================
+chunk 22
+Dementia > 1.1.1.1 Classiﬁcation of Dementia According to ICD-10
+(dementia, 0.6172) / (delusion, 0.2268) / (creutzfeldt, 0.1286) / (vascular, 0.0276) / (early, -0.0157)
+--------------------------------
+5 Dementia of the Alzheimer type: early onset/with delirium/with delusion/with depressive mood 5 Dementia of the Alzheimer type: late onset/with delirium/ with delusion/with depressive mood (together about 70%) 5 Vascular dementia/with delirium/with delusion/with depressive mood (~20%) 5 Dementia due to an HIV infection 5 Dementia due to a Parkinson’s disease 5 Dementia due to a Creutzfeldt-Jacob disease and due to other diseases of the brain
+
+================================
+chunk 23
+Dementia > 1.1.1.1 Classiﬁcation of Dementia According to ICD-10
+(dementia, 0.6081) / (vascular, 0.4767) / (areas, 0.1475) / (leads, 0.0837) / (reduced, 0.0297)
+--------------------------------
+Vascular dementia is caused by many small, sometimes unnoticed strokes.
+This leads to a reduced blood ﬂow to certain brain areas.
+```
+
+Compare with the page
+
+![docs/pg1.png](docs/pg1.png)
+
+![docs/pd2.png](docs/pg2.png)
+
+- The coloured rectangles identify the chunks.
+- The red arrows indicate the flow of the chunks.
+- The coloured rectangles identify the areas with the same header.
+
+### Observations
+
+- The dialog is split in 4 chunks.
+- The title of the orange rectangle if `Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer`.
+- The order of the chunks at the sides of the page is inconsistent.
+
+## Adding HeaderCleansing
+
+Comparison (before / after)
+
+Removal of extra blocks at the beginning and the end
+- Dementia > Contents > 1.1 Disease – 2 > 1.1.4 Prognosis – 12
+- Disease > 1.1.4 Prognosis
+
+Removal of repetitions
+- Dementia > Contents > 1.1 Disease – 2 > 1.1.4 Prognosis – 12 > 1.1 Disease
+- 1.1 Disease > 1.1.4 Prognosis
+
+Stateful processing with integration of the missing blocks at the beginning
+- Dementia > 1.1.1 Forms of Dementia
+- 1.1 Disease > 1.1.1 Forms of Dementia
+
+Stateful processing with integration of the missing blocks in the middle
+- Dementia > 1.1.1.1 Classiﬁcation of Dementia According to ICD-10
+- 1.1 Disease > 1.1.1 Forms of Dementia > 1.1.1.1 Classiﬁcation of Dementia According to ICD-10
+
+Removal of invalid blocks
+- Dementia > 1.1.1 Forms of Dementia > . Fig. 1.1 Alois Alzheimer
+- 1.1 Disease > 1.1.1 Forms of Dementia
+
+Remaining or new issues:
+- Removal of potentially useful blocks
+- Not all blocks can be integrated
+
+E.g.
+- Dementia > 1.1.1.2 Severity Levels > Warning signs
+- 1.1 Disease > 1.1.1.2 Severity Levels
+
+or
+- Dementia > 1.1.5.4 Complications > Delirium
+- 1.1 Disease > 1.1.5 Treatment > 1.1.5.4 Complications
