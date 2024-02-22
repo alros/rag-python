@@ -278,5 +278,5 @@ With a different text with a simpler structure, the parsing is successful.
 ## Test
 
 Tested with
-- Simone Schmidt, Martina Döbele - Dementia Companion - chapter 1
+- Simone Schmidt, Martina Döbele - Dementia Companion - chapter1
 - Lisa D. Ravdin, Heather L. Katzen - Handbook on the Neuropsychology of Aging and Dementia - chapter 1
