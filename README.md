@@ -73,6 +73,7 @@ That should open an interactive shell to chat with Llama2.
 - [11-query-chroma-with-kw](11-query-chroma-with-kw/README.md): use keywords to pre-filter the nodes returned by a query.
 - [12-faiss](12-faiss/README.md): alternative indexing techniques using the FAISS library.
 - [13-ingest-ebook](13-ingest-ebook/README.md): comparison between two extractors in order to parse a medical book in PDF.
+- [14-smarter-ingest](14-smarter-ingest/README.md): extension of the `SimpleDirectoryReader` with enhanced PDF processing.
 
 ## Datasets
 

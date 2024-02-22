@@ -217,7 +217,7 @@ Vascular dementia is caused by many small, sometimes unnoticed strokes.
 This leads to a reduced blood ﬂow to certain brain areas.
 ```
 
-Compare with the page
+Compare the above content with the original pages:
 
 ![docs/pg1.png](docs/pg1.png)
 
