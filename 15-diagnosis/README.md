@@ -4,6 +4,8 @@
 - [Part 2 - Diagnosis.py](#part-2---diagnosispy)
 - [Part 3 - Baseline vs RAG](#part-3---baseline-vs-rag)
 - [Part 4 - Guided RAG](#part-4---guided-rag)
+- [Part 5 - More tests](#part-5---more-tests)
+- [Part 6 - Final refinement](#part-6---final-refinement)
 
 ## Part 1 - Ollama/mistral
 
@@ -624,3 +626,26 @@ Long dialog - depression:
 This patient is a chronically fatigued individual who prefers solitude, spends most of their free time watching TV, 
 experiences sleep disturbances and bad dreams, and occasionally entertains suicidal thoughts.
 ```
+
+---
+
+# Part 6 - Final refinement
+
+See `diagnosisFinal.py`.
+
+Process:
+
+- Step 1: summary of the dialog.
+- Step 2: context with the disease + summary provided by step 1
+
+New prompts to provide a percentage.
+
+Results:
+
+| dialog                               | probability |
+|--------------------------------------|-------------|
+| questions_answers_depression_long    | 60%         |
+| questions_answers_depression_medium  | 20%         | 
+| questions_answers_depression_short   | N/A         |
+| questions_answers_normal1            | 10-25%      |
+| questions_answers_normal2            | N/A         | 
