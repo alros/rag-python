@@ -74,6 +74,7 @@ That should open an interactive shell to chat with Llama2.
 - [12-faiss](12-faiss/README.md): alternative indexing techniques using the FAISS library.
 - [13-ingest-ebook](13-ingest-ebook/README.md): comparison between two extractors in order to parse a medical book in PDF.
 - [14-smarter-ingest](14-smarter-ingest/README.md): extension of the `SimpleDirectoryReader` with enhanced PDF processing.
+- [15-diagnosis](15-diagnosis/README.md): attempts to define the probability of a diagnosis based on dialogs.
 
 ## Datasets
 
