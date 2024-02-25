@@ -3,3 +3,5 @@ finetuned
 05-create-a-bio/chroma_db
 chroma_db
 14-smarter-ingest/pdf
+15-diagnosis/chroma_db-single
+15-diagnosis/symptoms/content
