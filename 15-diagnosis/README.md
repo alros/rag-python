@@ -6,6 +6,9 @@
 - [Part 4 - Guided RAG](#part-4---guided-rag)
 - [Part 5 - More tests](#part-5---more-tests)
 - [Part 6 - Final refinement](#part-6---final-refinement)
+- [Part 7 - Further tests](#part-7---further-tests)
+  - [Dementia](#dementia---mistral)
+  - [Dementia](#dementia---llama2)
 
 ## Part 1 - Ollama/mistral
 
@@ -123,11 +126,11 @@ assistant: Based on the chat provided, I would diagnose the following three dise
 3. Brief Psychotic Disorder - 50% confidence
 ```
 
-Result: Success. The dialog is inspired by the Psychosis file.
+Result: Success. The dialogue is inspired by the Psychosis file.
 
 ## Part 3 - baseline vs rag
 
-Dialog:
+Dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -143,7 +146,7 @@ specific disease. However, here are three diseases that have been linked to exce
 3. Depression 15%
 ```
 
-Result: partial failure. The dialog is inspired by the Depression file.
+Result: partial failure. The dialogue is inspired by the Depression file.
 
 RAG:
 ```text
@@ -152,7 +155,7 @@ RAG:
 3. Psychosis - 30% confidence
 ```
 
-Result: failure. The dialog is inspired by the Depression file.
+Result: failure. The dialogue is inspired by the Depression file.
 
 ---
 
@@ -176,7 +179,7 @@ Disease2: Depression 30%
 Disease3: Schizophrenia 25%.
 ```
 
-Result: success. The dialog is inspired by the Depression file.
+Result: success. The dialogue is inspired by the Depression file.
 
 RAG:
 ```text
@@ -185,7 +188,7 @@ RAG:
 3. Psychosis - 30% confidence
 ```
 
-Result: failure. The dialog is inspired by the Depression file.
+Result: failure. The dialogue is inspired by the Depression file.
 
 ---
 
@@ -213,7 +216,7 @@ depression or social isolation. Additionally, the reported sedentary behavior co
 if it persists over time. Further assessment would be necessary to confirm any diagnosis.
 ```
 
-Result: success. The dialog is inspired by the Depression file.
+Result: success. The dialogue is inspired by the Depression file.
 
 RAG:
 ```text
@@ -222,7 +225,7 @@ RAG:
 3. Psychosis - 55% confidence
 ```
 
-Result: failure. The dialog is inspired by the Depression file.
+Result: failure. The dialogue is inspired by the Depression file.
 
 Observation: RAG is heavily influenced by the retrieval process. Effectively the result depends on which documents are retrieved.
 
@@ -232,7 +235,7 @@ Observation: RAG is heavily influenced by the retrieval process. Effectively the
 
 For this experiment, the knowledge is  split in thematic collections and only the collection about Depression is being loaded.
 
-The following dialog is used in combination with the `Depression` collection:
+The following dialogue is used in combination with the `Depression` collection:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -262,11 +265,11 @@ not provide enough information to accurately diagnose any of these conditions wi
 degrees of confidence are relatively low.
 ```
 
-Result: success. The dialog is inspired by the Depression file.
+Result: success. The dialogue is inspired by the Depression file.
 
 ---
 
-The following dialog is used in combination with the `Depression` collection:
+The following dialogue is used in combination with the `Depression` collection:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv, I go out with friends
@@ -291,7 +294,7 @@ depression as well. Additionally, the patient's busy schedule and infrequent soc
 are experiencing anxiety. The seasonal pattern in their mood changes suggests a possibility of SAD.
 ```
 
-Result: failure. The dialog is the opposite of the dialog inspired by the Depression file.
+Result: failure. The dialogue is the opposite of the dialogue inspired by the Depression file.
 
 This result suggests that the prompt may be misleading.
 
@@ -320,7 +323,7 @@ no, it does not seem pathologic
 Do not add extra information.
 ```
 
-And this dialog
+And this dialogue
 
 ```text
 Q: What do you do in your free time?
@@ -380,7 +383,7 @@ yes, it is possibly pathologic
 Do not add extra information.
 ```
 
-This dialog:
+This dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv, I go out with friends.
@@ -401,7 +404,7 @@ seeing friends is also within the normal range, as it can vary depending on indi
 Therefore, there is no evidence to suggest that the patient's behaviour is pathologic.
 ```
 
-Same prompt, different dialog:
+Same prompt, different dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -442,7 +445,7 @@ Reply with "yes" or "no" and your level of confidence.
 Is it pathological? Answer:
 ```
 
-Dialog:
+Dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv, I go out with friends.
@@ -464,7 +467,7 @@ definitive diagnosis without further evaluation. However, based on the informati
 patient may be experiencing symptoms of depression and may benefit from professional help.
 ```
 
-Dialog:
+Dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -503,7 +506,7 @@ Step 1: the conversation is pre-processed with these prompts:
 
 System:
 ```text
-You are excellent at understanding the Patient's profile based on dialogs with you
+You are excellent at understanding the Patient's profile based on dialogues with you
 ```
 
 User:
@@ -535,7 +538,7 @@ Reply with yes or no.
 Is this enough to determine if the patient is affected by the disease in the context?
 ```
 
-For the following dialog:
+For the following dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv, I go out with friends.
@@ -558,7 +561,7 @@ Result: positive result.
 
 ---
 
-Dialog:
+Dialogue:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -581,7 +584,7 @@ Result: positive result.
 
 ---
 
-Attempt with a longer dialog picking elements from the Depression file:
+Attempt with a longer dialogue picking elements from the Depression file:
 ```text
 Q: What do you do in your free time?
 A: The usual, I watch tv
@@ -610,18 +613,18 @@ Result: positive result.
 
 Comparison of the intermediate summaries:
 
-Short dialog - normal:
+Short dialogue - normal:
 ```text
 The patient is a busy individual who enjoys socializing with friends but regrets not having more time for physical 
 activities due to current project commitments.
 ```
 
-Short dialog - depression:
+Short dialogue - depression:
 ```text
 The patient is an individual who spends most of their free time watching TV and has infrequent social interactions.
 ```
 
-Long dialog - depression:
+Long dialogue - depression:
 ```text
 This patient is a chronically fatigued individual who prefers solitude, spends most of their free time watching TV, 
 experiences sleep disturbances and bad dreams, and occasionally entertains suicidal thoughts.
@@ -635,17 +638,190 @@ See `diagnosisFinal.py`.
 
 Process:
 
-- Step 1: summary of the dialog.
+- Step 1: summary of the dialogue.
 - Step 2: context with the disease + summary provided by step 1
 
 New prompts to provide a percentage.
 
 Results:
 
-| dialog                               | probability |
-|--------------------------------------|-------------|
-| questions_answers_depression_long    | 60%         |
-| questions_answers_depression_medium  | 20%         | 
-| questions_answers_depression_short   | N/A         |
-| questions_answers_normal1            | 10-25%      |
-| questions_answers_normal2            | N/A         | 
+| dialogue                            | probability |
+|-------------------------------------|-------------|
+| questions_answers_depression_long   | 60%         |
+| questions_answers_depression_medium | 20%         | 
+| questions_answers_depression_short  | N/A         |
+| questions_answers_normal1           | 10-25%      |
+| questions_answers_normal2           | N/A         | 
+
+## Part 7 - further tests
+
+### Dementia - Mistral
+
+Dialogue - dementia
+```text
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?',
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.'
+```
+Intermediate result:
+```text
+The patient is a working individual experiencing cognitive symptoms such as difficulty focusing, memory lapses, and 
+arithmetic errors.
+```
+Final result:
+```text
+It is difficult to provide an exact probability without conducting a thorough medical evaluation and diagnostic tests. 
+However, based on the context provided, it is estimated that about 5% of people with dementia have young onset dementia. 
+Additionally, the symptoms mentioned such as difficulty focusing, memory lapses, and arithmetic errors are common to 
+various types of dementia including Alzheimer's disease, vascular dementia, and frontotemporal dementia. Therefore, it 
+is important for the patient to consult with a healthcare professional for proper evaluation and diagnosis.
+```
+
+---
+
+Dialogue - no dementia
+```text
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.
+```
+
+Intermediate result:
+```text
+The patient is a hardworking individual with an average cognitive ability who experiences financial difficulties.
+```
+
+Final result:
+```text
+Based on the context provided, it is estimated that about 5% of people with dementia have young onset dementia. 
+Therefore, the probability that the patient is affected by the disease and has a diagnosis of young onset dementia is 
+5%.
+```
+
+---
+
+```text
+Q: How old are you?
+A: I am 73.
+Q: What is your occupation?
+A: I am retired.
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?',
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.'
+Q: What did you for breakfast?',
+A: Oh, I don't remember.
+```
+Intermediate result:
+```text
+The patient is a 73-year-old retired individual experiencing cognitive decline, specifically in focus, memory, and 
+arithmetic abilities.
+```
+Final result:
+```text
+Based on the context provided, the patient's symptoms are consistent with various types of dementia. However, without 
+further diagnostic information, it is impossible to determine the specific type or percentage likelihood of each 
+subtype, including Alzheimer's disease, vascular dementia, Lewy body dementia, frontotemporal dementia, and mixed 
+dementia. Therefore, I cannot provide a definitive percentage for this patient's condition. It is essential to consult 
+with a healthcare professional for an accurate diagnosis and appropriate treatment options.
+```
+
+---
+
+Dialogue - no dementia
+```text
+Q: How old are you?
+A: I am 35.
+A: What is your occupation?
+A: I teach Math in high school.
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.
+Q: What did you for breakfast?
+A: Coffee and some cake.
+```
+
+Intermediate result:
+```text
+The patient is a 35-year-old high school Math teacher who works extensively and reports no significant memory issues or 
+impairments in daily activities, but mentions the need for financial assistance and shares a habit of having coffee and 
+cake for breakfast.
+```
+
+Final result:
+```text
+ Based on the provided context, the probability of the patient having dementia at the age of 35 is less than 5%. The 
+ symptoms described, such as financial difficulties and a habit of having coffee and cake for breakfast, are not 
+ specific to dementia. Young onset dementia is rare, and Alzheimer's disease, which is the most common type, typically 
+ affects individuals over the age of 65.
+```
+
+### Dementia - Llama2
+
+```text
+Q: How old are you?
+A: I am 73.
+Q: What is your occupation?
+A: I am retired.
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?',
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.'
+Q: What did you for breakfast?',
+A: Oh, I don't remember.
+```
+Intermediate result:
+```text
+Based on the conversation provided, my patient is a 73-year-old male who is retired and experiences difficulty with 
+memory and focus, resulting in struggles with everyday tasks such as paying bills. He also mentions that he sometimes 
+forgets things, including what he had for breakfast.
+```
+Final result:
+```text
+Based on the symptoms described, I would estimate that the patient has a probability of being affected by dementia of 
+around 80%.
+```
+
+---
+
+Dialogue - no dementia
+```text
+Q: How old are you?
+A: I am 35.
+A: What is your occupation?
+A: I teach Math in high school.
+Q: Do you have any complain?
+A: Yes, I struggle to focus on my work.
+Q: Do you have problems with memory?
+A: A little. Sometimes I don't remember what I was doing when I enter a room.
+Q: Does that impair your activity?
+A: I need some help to pay the bills because I get the numbers wrong. It never happened before.
+Q: What did you for breakfast?
+A: Coffee and some cake.
+```
+
+Intermediate result:
+```text
+Based on the conversation provided, my patient is a 35-year-old male high school Math teacher who works a lot but does 
+not have any significant memory impairments or daily activity difficulties, other than finding it challenging to pay 
+bills due to their expensiveness.
+```
+
+Final result:
+```text
+Based on the information provided, I would estimate the probability of the patient being affected by dementia to be 
+around 10%.
+```

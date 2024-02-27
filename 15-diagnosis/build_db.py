@@ -4,7 +4,7 @@ from SimpleFileReader import SimpleFileReader
 from pathlib import Path
 
 kb_path = 'symptoms/content'
-db_path = 'chroma_db'
+db_path = './chroma_db/diagnosis'
 
 
 def load_file(filename: str, topic: str, chroma_collection: Collection):
@@ -21,13 +21,14 @@ def load_file(filename: str, topic: str, chroma_collection: Collection):
 db = chromadb.PersistentClient(path=db_path)
 
 for file in [
-    'CardiovascularDiseases.txt',
-    'Depression.txt',
-    'DiabetesMellitus.txt',
-    'MentalDisability.txt',
-    'Osteoarthritis.txt',
-    'Osteoporosis.txt',
-    'Psychosis.txt'
+    # 'CardiovascularDiseases.txt',
+    # 'Depression.txt',
+    # 'DiabetesMellitus.txt',
+    # 'MentalDisability.txt',
+    # 'Osteoarthritis.txt',
+    # 'Osteoporosis.txt',
+    # 'Psychosis.txt'
+    'Dementia.txt'
 ]:
     description = file.split('.')[0]
     chroma_collection = db.get_or_create_collection(description)

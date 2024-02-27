@@ -8,7 +8,8 @@ from NullRetriever import NullRetriever
 from diagnosisFinalQuestions import *
 from diagnosisFinalUtils import *
 
-question = questions_answers_normal2
+question = questions_answers_dementia_normal_medium
+collection = collection_dementia
 
 llm = Ollama(model=model)
 llama_debug = LlamaDebugHandler(print_trace_on_end=True)
@@ -18,19 +19,11 @@ service_context = ServiceContext.from_defaults(llm=llm,
                                                callback_manager=callback_manager)
 db = chromadb.PersistentClient(path=db_path)
 
-vector_retriever_chunk = get_vector_retriever_chunk(collection='Depression',
+vector_retriever_chunk = get_vector_retriever_chunk(collection=collection,
                                                     db=db,
                                                     service_context=service_context)
 null_retriever = NullRetriever()
 
-# user_prompt = """\
-# Context information is below.
-# ---------------------
-# {context_str}
-# ---------------------
-# {query_str}
-# Reply with yes or no.
-# Is this enough to determine if the patient is affected by the disease in the context?"""
 user_prompt = """\
 Context information is below.
 ---------------------
@@ -77,15 +70,15 @@ query_engine = RetrieverQueryEngine.from_args(
     text_qa_template=text_qa_template
 )
 
-response = query_engine_summary.query(query)
+response1 = query_engine_summary.query(query)
 
-print_debug(response=response, llama_debug=llama_debug)
+print_debug(response=response1, llama_debug=llama_debug)
 print("*" * 40)
 
-response = query_engine.query(response.response)
+response2 = query_engine.query(response1.response)
 
-print_debug(response=response, llama_debug=llama_debug)
+print_debug(response=response2, llama_debug=llama_debug)
 print("*" * 40)
 
 print(("=" * 20) + 'FINAL RESPONSE' + ("=" * 20))
-print(response.response)
+print(response2.response)

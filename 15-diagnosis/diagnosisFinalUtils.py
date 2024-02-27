@@ -16,6 +16,9 @@ db_path = './chroma_db/diagnosis'
 kb_path = './symptoms'
 db_collection = 'symptoms'
 
+collection_depression = 'Depression'
+collection_dementia = 'Dementia'
+
 
 def print_debug(llama_debug: LlamaDebugHandler, response):
     event_pairs = llama_debug.get_event_pairs(CBEventType.LLM)
