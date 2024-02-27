@@ -35,3 +35,6 @@ Depression
 Mental Disability
 - 2.3 Mental Disability
 - 2.3.1 Symptoms of Mental Retardation
+
+Dementia
+- https://www.dementiauk.org/information-and-support/about-dementia/what-is-dementia/

@@ -47,7 +47,7 @@ questions_answers_depression_long = [
 ]
 
 # Normal
-questions_answers_normal1 = [
+questions_answers_depression_normal1 = [
     {
         'q': 'What do you do in your free time?',
         'a': 'The usual, I watch tv, I go out with friends.'
@@ -61,7 +61,7 @@ questions_answers_normal1 = [
 ]
 
 # Normal alt
-questions_answers_normal2 = [
+questions_answers_depression_normal2 = [
     {
         'q': 'What do you do in your free time?',
         'a': 'The usual, I watch tv, I go out with friends.'
@@ -71,5 +71,79 @@ questions_answers_normal2 = [
     }, {
         'q': 'How often do you see friends? ',
         'a': 'Quite often, some once or twice a week, others once a month.'
+    }
+]
+
+# Dementia short
+questions_answers_dementia_short = [
+    {
+        'q': 'Do you have any complain?',
+        'a': 'Yes, I struggle to focus on my work.'
+    }, {
+        'q': 'Do you have problems with memory?',
+        'a': 'A little. Sometimes I don\'t remember what I was doing when I enter a room.'
+    }, {
+        'q': 'Does that impair your activity?',
+        'a': 'I need some help to pay the bills because I get the numbers wrong. It never happened before.'
+    }
+]
+
+# Dementia medium
+questions_answers_dementia_medium = [
+    {
+        'q': 'How old are you?',
+        'a': 'I am 73.'
+    }, {
+        'q': 'What is your occupation?',
+        'a': 'I am retired.'
+    }, {
+        'q': 'Do you have any complain?',
+        'a': 'Yes, I struggle to focus on my work.'
+    }, {
+        'q': 'Do you have problems with memory?',
+        'a': 'A little. Sometimes I don\'t remember what I was doing when I enter a room.'
+    }, {
+        'q': 'Does that impair your activity?',
+        'a': 'I need some help to pay the bills because I get the numbers wrong. It never happened before.'
+    }, {
+        'q': 'What did you for breakfast?',
+        'a': 'Oh, I don\'t remember.'
+    }
+]
+
+# Non Dementia short
+questions_answers_dementia_normal_short = [
+    {
+        'q': 'Do you have any complain?',
+        'a': 'Not really, I work a lot.'
+    }, {
+        'q': 'Do you have problems with memory?',
+        'a': 'I\'m not a genius but I don\'t have any particular problem.'
+    }, {
+        'q': 'Don\'t you have impairments in your daily activity?',
+        'a': 'I need some help to pay the bills because they are expensive.'
+    }
+]
+
+# Non Dementia medium
+questions_answers_dementia_normal_medium = [
+    {
+        'q': 'How old are you?',
+        'a': 'I am 35.'
+    }, {
+        'q': 'What is your occupation?',
+        'a': 'I teach Math in high school.'
+    }, {
+        'q': 'Do you have any complain?',
+        'a': 'Not really, I work a lot.'
+    }, {
+        'q': 'Do you have problems with memory?',
+        'a': 'I\'m not a genius but I don\'t have any particular problem.'
+    }, {
+        'q': 'Don\'t you have impairments in your daily activity?',
+        'a': 'I need some help to pay the bills because they are expensive.'
+    }, {
+        'q': 'What did you for breakfast?',
+        'a': 'Coffee and some cake.'
     }
 ]
