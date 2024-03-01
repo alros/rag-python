@@ -7,7 +7,7 @@ from llama_index.vector_stores import ChromaVectorStore
 
 retrieve_N_chunks = 1
 
-model = 'llama2'
+model = 'mistral'
 context_window = 4096
 chunk_size = context_window / 4
 

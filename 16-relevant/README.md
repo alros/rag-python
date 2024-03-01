@@ -4,15 +4,21 @@ The goal is to find relevant questions to continue the dialogue.
 
 The scenario is a doctor trying to diagnose a potential case of dementia.
 
-- [Strategy 1](#strategy-1)
+- [Development of the chat](#development-of-the-chat)
   - [Variation 1](#variation-1)
   - [Variation 2](#variation-2)
   - [Variation 3](#variation-3)
   - [Variation 4](#variation-4)
   - [Variation 4 - New attempt](#variation-4---new-attempt)
   - [Variation 5](#variation-5)
+- [Putting everything together](#putting-everything-together)
+  - [Test 1](#test-1)
+  - [Test 2](#test-2)
+- [Final notes](#final-notes)
 
-## Strategy 1
+## Development of the chat
+
+`relevant_topic` aims to find the next question given the dialog and the disease in the context 
 
 System prompt:
 ```text
@@ -268,3 +274,153 @@ ones or handling financial matters?
 
 Comment:
 - it repeats itself after a while. The context may be full.
+
+## Putting everything together
+
+`diagnosis_chat` puts everything together:
+
+1. chat generation
+2. summary of the current chat 
+3. attempt to perform a diagnosis 
+4. generation of the next question and loop to 1
+
+### Test 1
+
+Dialog:
+```text
+Q: How old are you?
+A: 75
+```
+
+Summary:
+```text
+Based on the conversation, my patient is a 75-year-old male.
+```
+Hallucination: it can't know that the patient is male.
+
+Diagnosis:
+```text
+Yes, based on the information provided in the conversation, it is enough to determine that the patient is affected by 
+dementia. The patient's age (75 years old) and the symptoms described (memory loss, confusion, difficulty with speech 
+and understanding, problems with decision-making, etc.) are all consistent with the diagnosis of dementia. Additionally, 
+the conversation mentions that there are over 200 subtypes of dementia, and the most common types in the UK are 
+Alzheimer's disease, vascular dementia, Lewy body dementia, frontotemporal dementia, and mixed dementia, which further 
+supports the diagnosis.
+```
+Bias: the model uses the context to conclude that the expected diagnosis is dementia.
+
+This test was performed with Llama2 that was less effective in previous experiments.
+
+The following tests will use Mistral.
+
+### Test 2
+
+Dialog:
+```text
+Q: How old are you?
+A: 75
+```
+
+Summary:
+```text
+The patient is a 75-year-old individual.
+```
+
+Diagnosis:
+```text
+No, the context information provided does not specify if the patient is affected by dementia or which type of dementia 
+they may have. It only provides general information about various types of dementia and their symptoms.
+```
+
+---
+
+Dialog:
+```text
+Q: How old are you?
+A: 75
+Q: Have you noticed any changes in your memory, thinking or speech abilities recently?
+A: My wife complains that I always forget stuff when I go to the grocery store and sometimes I cannot remember names.
+```
+
+Summary:
+```text
+The patient is a 75-year-old individual experiencing mild memory lapses and forgetfulness, as reported by their spouse.
+```
+Note: it extended the previous summary by mentioning 2 symptoms (mild memory lapses, forgetfulness) with one example
+(the spouse).
+
+Diagnosis:
+```text
+Yes, the patient's symptoms of mild memory lapses and forgetfulness are consistent with some types of dementia, such as 
+Alzheimer's disease or vascular dementia. However, a definitive diagnosis would require further evaluation by a 
+healthcare professional.
+```
+
+---
+
+Dialog:
+```text
+Q: How old are you?
+A: 75
+Q: Have you noticed any changes in your memory, thinking or speech abilities recently?
+A: My wife complains that I always forget stuff when I go to the grocery store and sometimes I cannot remember names.
+Q: I see, Mr. Patient. Could you please share some examples of the things you forget or have trouble remembering?
+A: I forget to take my pills for the pressure, sometimes I do not remember people, last week I did not remember how to
+get home.
+```
+
+Summary:
+```text
+The patient is a 75-year-old individual experiencing memory lapses and cognitive impairment, as evidenced by forgetting 
+to take medications, misplacing familiar routes, and difficulty recalling names.
+```
+Note: it extended the previous summary by mentioning 2 symptoms (memory lapses, cognitive impairment) with 3 examples
+(forgetting medications, routes, recalling names).
+
+Diagnosis:
+```text
+Yes, based on the information provided, the patient's symptoms are consistent with those of dementia, specifically 
+Alzheimer's disease. However, a definitive diagnosis would require further evaluation and assessment by a healthcare 
+professional.
+```
+
+---
+
+Dialog:
+```text
+Q: How old are you?
+A: 75
+Q: Have you noticed any changes in your memory, thinking or speech abilities recently?
+A: My wife complains that I always forget stuff when I go to the grocery store and sometimes I cannot remember names.
+Q: I see, Mr. Patient. Could you please share some examples of the things you forget or have trouble remembering?
+A: I forget to take my pills for the pressure, sometimes I do not remember people, last week I did not remember how to
+get home.
+Q: Mr. Patient, have you experienced any confusion or disorientation in your daily life, such as getting lost in 
+familiar places or difficulty understanding time and dates?
+A: It happened last week. At some point I did not know where I was. I went back to the shop and asked to help me.
+```
+
+Summary:
+```text
+The patient is a 75-year-old individual who experiences forgetfulness, confusion, and disorientation, as evidenced by 
+frequent episodes of misplacing items, forgetting to take medications, difficulty remembering names and directions, and 
+getting lost in familiar places.
+```
+Note: it extended the previous summary by mentioning 3 symptoms (forgetfulness, confusion, disorientation) with 4 
+examples (misplacing items, forgetting medications, remembering names and directions, getting lost).
+
+Hallucination: the patient does not misplace items.
+
+Diagnosis:
+```text
+Yes, based on the provided context and the patient's symptoms, it is possible that the patient may be affected by a type 
+of dementia, such as Alzheimer's disease or vascular dementia. However, further assessment and evaluation by a 
+healthcare professional are necessary to make an accurate diagnosis.
+```
+
+## Final notes
+
+- The LLM jumps to conclusions really quickly.
+- The prompt to generate the next question is still insufficient to generate clean questions.
+  - Parsing the response to extract the question is not a trivial task with a programmatic approach.
+- The prompt to summarise the patient's condition may be too restrictive. 
