@@ -421,6 +421,7 @@ healthcare professional are necessary to make an accurate diagnosis.
 ## Final notes
 
 - The LLM jumps to conclusions really quickly.
+  - This issue makes it impossible to reliably stop early and provide a diagnosis.
 - The prompt to generate the next question is still insufficient to generate clean questions.
   - Parsing the response to extract the question is not a trivial task with a programmatic approach.
-- The prompt to summarise the patient's condition may be too restrictive. 
+- The prompt to summarise the patient's condition may be too restrictive.

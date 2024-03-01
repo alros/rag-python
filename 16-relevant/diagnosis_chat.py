@@ -154,7 +154,7 @@ while not enough:
         #
         # TODO: This code is unreachable. Evaluate response_diagnosis
         #
-        print('This is enough for today, I do not see any reason to worry')
+        print('The final diagnosis is...')
         enough = True
         continue
 
