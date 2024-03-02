@@ -52,16 +52,20 @@ Answer:"""
 
 # Diagnosis prompt
 system_prompt_diagnosis = """\
-You are a Doctor.
-You can provide medical advice."""
+<s>[INST]You are a Doctor.
+You can provide medical advice.
+Follow the instructions.[/INST]</s>"""
 user_prompt_diagnosis = """\
-Context information is below.
+<s>[INST]What is the probability that the patient is affect by the disease in the description.
+Disease description:
 ---------------------
 {context_str}
 ---------------------
+Patient description:
+---------------------
 {query_str}
-Reply with yes or no.
-Is this enough to determine if the patient is affected by the disease in the context?"""
+---------------------
+Just generate the percentage of confidence without explanations.[/INST]</s>"""
 
 # Questions
 basic_questions = [
