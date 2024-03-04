@@ -1,13 +1,13 @@
 import chromadb
-from llama_index import ServiceContext, VectorStoreIndex, QueryBundle, get_response_synthesizer, PromptTemplate
-from llama_index.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
-from llama_index.llms import Ollama
-from llama_index.postprocessor import LLMRerank
-from llama_index.prompts import PromptType
-from llama_index.query_engine import RetrieverQueryEngine
-from llama_index.response.schema import RESPONSE_TYPE
-from llama_index.response_synthesizers import ResponseMode
-from llama_index.vector_stores import ChromaVectorStore
+from llama_index.legacy import ServiceContext, VectorStoreIndex, QueryBundle, get_response_synthesizer, PromptTemplate
+from llama_index.legacy.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
+from llama_index.legacy.llms import Ollama
+from llama_index.legacy.postprocessor import LLMRerank
+from llama_index.legacy.prompts import PromptType
+from llama_index.legacy.query_engine import RetrieverQueryEngine
+from llama_index.legacy.response.schema import RESPONSE_TYPE
+from llama_index.legacy.response_synthesizers import ResponseMode
+from llama_index.legacy.vector_stores import ChromaVectorStore
 
 model = "mistral"
 db_path = '../chroma_db/gutenberg'

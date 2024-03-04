@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import Optional, List, Dict, Tuple
 
 from keybert import KeyBERT
-from llama_index import SimpleDirectoryReader, Document
-from llama_index.readers.base import BaseReader
+from llama_index.legacy import SimpleDirectoryReader, Document
+from llama_index.legacy.readers.base import BaseReader
 from llmsherpa.readers import LayoutPDFReader
 from pydantic import PrivateAttr
 
