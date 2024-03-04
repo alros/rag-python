@@ -1,6 +1,6 @@
 import os
 import time
-from llama_index import (
+from llama_index.legacy import (
     VectorStoreIndex,
     ServiceContext,
     SimpleDirectoryReader,
@@ -8,8 +8,8 @@ from llama_index import (
     StorageContext,
     load_index_from_storage
 )
-from llama_index.llms import HuggingFaceLLM
-from llama_index.prompts import PromptTemplate
+from llama_index.legacy.llms import HuggingFaceLLM
+from llama_index.legacy.prompts import PromptTemplate
 import torch
 from transformers import AutoModelForCausalLM
 

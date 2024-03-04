@@ -1,11 +1,11 @@
 import chromadb
-from llama_index import ServiceContext, VectorStoreIndex, ChatPromptTemplate
-from llama_index.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
-from llama_index.core.llms.types import MessageRole, ChatMessage
-from llama_index.llms import Ollama
-from llama_index.query_engine import RetrieverQueryEngine
-from llama_index.response_synthesizers import ResponseMode
-from llama_index.vector_stores import ChromaVectorStore
+from llama_index.legacy import ServiceContext, VectorStoreIndex, ChatPromptTemplate
+from llama_index.legacy.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
+from llama_index.legacy.core.llms.types import MessageRole, ChatMessage
+from llama_index.legacy.llms import Ollama
+from llama_index.legacy.query_engine import RetrieverQueryEngine
+from llama_index.legacy.response_synthesizers import ResponseMode
+from llama_index.legacy.vector_stores import ChromaVectorStore
 
 model = 'mistral'
 context_window = 4096

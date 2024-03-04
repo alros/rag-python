@@ -1,8 +1,8 @@
 from pathlib import Path
 from typing import Optional, List, Dict
 
-from llama_index import Document
-from llama_index.readers.base import BaseReader
+from llama_index.legacy import Document
+from llama_index.legacy.readers.base import BaseReader
 
 
 class SimpleFileReader(BaseReader):
