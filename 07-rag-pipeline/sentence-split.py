@@ -1,12 +1,12 @@
 import asyncio
 import time
 
-from llama_index.legacy import SimpleDirectoryReader
-from llama_index.legacy.extractors import TitleExtractor, SummaryExtractor
-from llama_index.legacy.ingestion import IngestionPipeline
-from llama_index.legacy.llms import Ollama
-from llama_index.legacy.node_parser import SentenceSplitter
-from llama_index.legacy.schema import MetadataMode
+from llama_index import SimpleDirectoryReader
+from llama_index.extractors import TitleExtractor, SummaryExtractor
+from llama_index.ingestion import IngestionPipeline
+from llama_index.llms import Ollama
+from llama_index.node_parser import SentenceSplitter
+from llama_index.schema import MetadataMode
 
 kb_path = '../datasets/bio'
 

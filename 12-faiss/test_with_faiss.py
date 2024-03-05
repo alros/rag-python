@@ -1,8 +1,8 @@
-from llama_index.legacy import SimpleDirectoryReader, StorageContext, VectorStoreIndex, load_index_from_storage, \
+from llama_index import SimpleDirectoryReader, StorageContext, VectorStoreIndex, load_index_from_storage, \
     ServiceContext, QueryBundle
 import faiss
-from llama_index.legacy.llms import Ollama
-from llama_index.legacy.vector_stores import FaissVectorStore
+from llama_index.llms import Ollama
+from llama_index.vector_stores import FaissVectorStore
 
 dataset = '../datasets/gutenberg'
 index_folder = './storage'

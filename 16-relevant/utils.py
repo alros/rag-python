@@ -1,9 +1,9 @@
 from chromadb import ClientAPI
 from langchain_core.retrievers import BaseRetriever
-from llama_index.legacy import VectorStoreIndex, ChatPromptTemplate, ServiceContext
-from llama_index.legacy.callbacks import CBEventType, LlamaDebugHandler
-from llama_index.legacy.core.llms.types import MessageRole, ChatMessage
-from llama_index.legacy.vector_stores import ChromaVectorStore
+from llama_index import VectorStoreIndex, ChatPromptTemplate, ServiceContext
+from llama_index.callbacks import CBEventType, LlamaDebugHandler
+from llama_index.core.llms.types import MessageRole, ChatMessage
+from llama_index.vector_stores import ChromaVectorStore
 
 retrieve_N_chunks = 1
 

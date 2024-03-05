@@ -1,10 +1,10 @@
 from typing import List
 
 from keybert import KeyBERT
-from llama_index.legacy import SimpleDirectoryReader
-from llama_index.legacy.ingestion import IngestionPipeline
-from llama_index.legacy.node_parser import SentenceSplitter
-from llama_index.legacy.schema import TextNode
+from llama_index import SimpleDirectoryReader
+from llama_index.ingestion import IngestionPipeline
+from llama_index.node_parser import SentenceSplitter
+from llama_index.schema import TextNode
 
 chunk_size = 128
 chunk_overlap = 20

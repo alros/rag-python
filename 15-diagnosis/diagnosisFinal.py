@@ -1,8 +1,8 @@
 import chromadb
-from llama_index.legacy.callbacks import CallbackManager
-from llama_index.legacy.llms import Ollama
-from llama_index.legacy.query_engine import RetrieverQueryEngine
-from llama_index.legacy.response_synthesizers import ResponseMode
+from llama_index.callbacks import CallbackManager
+from llama_index.llms import Ollama
+from llama_index.query_engine import RetrieverQueryEngine
+from llama_index.response_synthesizers import ResponseMode
 
 from NullRetriever import NullRetriever
 from diagnosisFinalQuestions import *

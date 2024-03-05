@@ -1,5 +1,5 @@
-from llama_index.legacy import SimpleDirectoryReader
-from llama_index.legacy.node_parser import SentenceSplitter
+from llama_index import SimpleDirectoryReader
+from llama_index.node_parser import SentenceSplitter
 
 kb_path = '../datasets/TwentyThousandLeaguesUnderTheSea'
 

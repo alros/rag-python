@@ -1,7 +1,7 @@
 from typing import List
 
-from llama_index.legacy.ingestion import IngestionPipeline
-from llama_index.legacy.schema import TextNode
+from llama_index.ingestion import IngestionPipeline
+from llama_index.schema import TextNode
 
 from PDFDirectoryReader import PDFDirectoryReader
 

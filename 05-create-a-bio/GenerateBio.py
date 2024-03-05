@@ -1,11 +1,11 @@
 import logging
 import sys
 
-from llama_index.legacy import SimpleDirectoryReader, ServiceContext, StorageContext
-from llama_index.legacy import VectorStoreIndex
-from llama_index.legacy.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
-from llama_index.legacy.llms import Ollama
-from llama_index.legacy.vector_stores import ChromaVectorStore
+from llama_index import SimpleDirectoryReader, ServiceContext, StorageContext
+from llama_index import VectorStoreIndex
+from llama_index.callbacks import LlamaDebugHandler, CallbackManager, CBEventType
+from llama_index.llms import Ollama
+from llama_index.vector_stores import ChromaVectorStore
 import chromadb
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
