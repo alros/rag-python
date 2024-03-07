@@ -4,7 +4,6 @@ from llama_index.llms import Ollama
 from llama_index.query_engine import RetrieverQueryEngine
 from llama_index.response_synthesizers import ResponseMode
 from utils import *
-from NullRetriever import NullRetriever
 
 llm = Ollama(model=model)
 collection = collection_dementia
