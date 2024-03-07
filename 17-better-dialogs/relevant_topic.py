@@ -16,10 +16,10 @@ service_context = ServiceContext.from_defaults(llm=llm,
                                                callback_manager=callback_manager)
 db = chromadb.PersistentClient(path=db_path)
 
-# vector_retriever_chunk = get_vector_retriever_chunk(collection=collection,
-#                                                     db=db,
-#                                                     service_context=service_context)
-vector_retriever_chunk = NullRetriever()
+vector_retriever_chunk = get_vector_retriever_chunk(collection=collection,
+                                                    db=db,
+                                                    service_context=service_context)
+#vector_retriever_chunk = NullRetriever()
 
 system_prompt = """\
 You only respond with valid JSON objects."""
@@ -33,7 +33,7 @@ This is the conversation with the patient:
 <conversation>
 {query_str}
 </conversation>
-Given the context information, the conversation with the patient, and not prior knowledge, generate the next question.
+Given the conversation with the patient, and not prior knowledge, generate a question to find out if the patient experiences any symptom in the context.
 You will respond only with a JSON object with the key Question with question for the patient, the key Explanation with the explanation."""
 
 text_qa_template = get_prompt_template(system_prompt=system_prompt, user_prompt=user_prompt_summary)
@@ -50,14 +50,20 @@ questions = [
     {
         'q': 'How old are you?',
         'a': '75'
-    }, {
-        'q': 'I\'d like to ask if you have noticed any memory loss or difficulty in recalling recent events?',
-        'a': 'yes, sometimes I forget where I am'
-    }, {
-        'q': 'I see. Have you also experienced any difficulty in recognizing familiar faces or objects recently?',
-        'a': 'No, I have never problems recognising people'
     }
 ]
+# questions = [
+#     {
+#         'q': 'How old are you?',
+#         'a': '75'
+#     }, {
+#         'q': 'I\'d like to ask if you have noticed any memory loss or difficulty in recalling recent events?',
+#         'a': 'yes, sometimes I forget where I am'
+#     }, {
+#         'q': 'I see. Have you also experienced any difficulty in recognizing familiar faces or objects recently?',
+#         'a': 'No, I have never problems recognising people'
+#     }
+# ]
 
 
 query = '\n'.join([f'You: "{qa["q"]}"\nPatient: "{qa["a"]}"' for qa in questions])
