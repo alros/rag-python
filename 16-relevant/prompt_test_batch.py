@@ -144,7 +144,7 @@ for test in tests:
     except JSONDecodeError:
         data = {
             'Number': -1,
-            'Synthetic': -1,
+            'Severity': -1,
             'Confidence': -1
         }
     try:

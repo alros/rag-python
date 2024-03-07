@@ -13,3 +13,4 @@ yake==0.4.8
 rake-nltk==1.0.6
 faiss-cpu==1.7.4
 llmsherpa==0.1.4
+chromadb==0.4.24
