@@ -221,8 +221,8 @@ class PDFElasticStorage:
 
 
 pdf_multilevel_loader = PDFElasticStorage()
-# pdf_multilevel_loader.reset()
-# pdf_multilevel_loader.ingest('pdf')
+pdf_multilevel_loader.reset()
+pdf_multilevel_loader.ingest('pdf')
 
 results = pdf_multilevel_loader.find('the patient experiences confusion',
                                      top_summary=10,

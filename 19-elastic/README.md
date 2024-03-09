@@ -16,3 +16,6 @@ The search works on two levels:
 - match of top_k summaries.
 - match of top_k chunks with parent in the first set.
 
+## Implementation
+
+See `PDFElasticStorage.py`.
