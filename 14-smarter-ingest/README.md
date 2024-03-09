@@ -44,6 +44,8 @@ Download and start the docker image of nlm-ingestor
 
 `docker pull ghcr.io/nlmatics/nlm-ingestor:latest`
 
+`docker run -p 5010:5001 ghcr.io/nlmatics/nlm-ingestor:latest`
+
 Run `SmarterExtractor.py`
 
 ## Example of output

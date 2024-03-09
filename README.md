@@ -77,7 +77,8 @@ That should open an interactive shell to chat with Llama2.
 - [15-diagnosis](15-diagnosis/README.md): attempts to define the probability of a diagnosis based on dialogs.
 - [16-relevant](16-relevant/README.md): find relevant questions to diagnose a disease.
 - [17-better-dialogs](17-better-dialogs/README.md): attempt to improve the dialogs with RAG.
-- [18-translate-in-you-form](18-translate-in-you-form/README.md): translate a diagnosis into a dialog directed to the patient
+- [18-translate-in-you-form](18-translate-in-you-form/README.md): translate a diagnosis into a dialog directed to the patient.
+- [19-elastic](19-elastic/README.md): multilevel indexing of PDFs storing the embeddings in Elasticsearch.
 
 ## Datasets
 
